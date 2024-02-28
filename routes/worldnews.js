@@ -66,7 +66,7 @@ router.put("/editNews", async (req, res) => {
   }
 });
 
-router.delete("/deleteNews", async (req, res) => {
+router.delete("/deleteNews/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const news = await worldNews.findByIdAndDelete(id);

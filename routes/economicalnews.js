@@ -50,7 +50,7 @@ router.get("/getOneNews/:id", async (req, res) => {
   }
 });
 
-router.put("/editNews", async (req, res) => {
+router.put("/editNews/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const edit = {
@@ -67,7 +67,7 @@ router.put("/editNews", async (req, res) => {
   }
 });
 
-router.delete("/deleteNews", async (req, res) => {
+router.delete("/deleteNews/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const news = await economicNews.findByIdAndDelete(id);
