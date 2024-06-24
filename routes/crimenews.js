@@ -80,5 +80,3 @@ router.delete("/deleteNews/:id", async (req, res) => {
   }
 });
 
-module.exports = router;
-background: linear-gradient(180deg, #000000 61.24%, #002758 100%);
