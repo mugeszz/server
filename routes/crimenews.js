@@ -73,6 +73,7 @@ router.put("/editNews/:id", async (req, res) => {
   }
 });
 
+
 // Delete news by ID
 router.delete("/deleteNews/:id", async (req, res) => {
   try {
