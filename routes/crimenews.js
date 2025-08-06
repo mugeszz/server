@@ -59,24 +59,17 @@ router.get("/getOneNews/:id", async (req, res) => {
 router.put("/editNews/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, description } = req.body;
-    if (!title || !description) {
-      return res
-        .status(400)
-        .json({ message: "Title and description are required" });
-    }
-    const news = await CrimeNews.findByIdAndUpdate(
-      id,
-      { title, description },
-      { new: true }
-    );
-    if (!news) {
-      return res.status(404).json({ message: "News not found" });
-    }
+    const edit = {
+      title: req.body.title,
+      description: req.body.description,
+    };
+    const news = await CrimeNews.findByIdAndUpdate(id, edit, { new: true });
     res.status(200).send(news);
   } catch (error) {
     console.log(error);
-    res.status(500).json({ message: "something went wrong" });
+    res.status(500).json({
+      message: "something went wrong",
+    });
   }
 });
 
@@ -96,3 +89,4 @@ router.delete("/deleteNews/:id", async (req, res) => {
 });
 
 module.exports = router;
+
