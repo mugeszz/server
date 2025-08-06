@@ -96,4 +96,3 @@ router.delete("/deleteNews/:id", async (req, res) => {
 });
 
 module.exports = router;
-
