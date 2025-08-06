@@ -1,2 +1,4 @@
 .env
-node modukes
+*.env   
+node modules
+dist        
